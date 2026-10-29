@@ -4,7 +4,7 @@ title: '#4471 split · three problems, three tickets'
 owner: Angel-Mu
 status: closed
 reviewed: 2026-10-28
-signature: Angel-Mu
+signature: v1.eyJzdWIiOiI2MjQzIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMyNDk0NjgsImV4cCI6MTc5MzMzNTg2OH0.1bppv0yoKLi19Ez-UZ1ZD3YpliCp1IdQ5ktZv0Ac3HE
 ---
 
 <script>
