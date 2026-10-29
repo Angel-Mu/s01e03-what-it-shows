@@ -33,14 +33,15 @@ Not one issue. Three problems, each with its own ticket. The queued fix does not
   tenants on booking-v3 who book through the form see it.
 - **shift.** The date moves by one day, Tuesday to Monday, and the day and month do not swap. One
   meeting reached Lisbon as Tuesday and Toronto as Monday. This is time-zone handling. The desk
-  already read these as a one-day move (`desk-notes.json`), but the #4471 page still counts them
-  under `parser`.
+  already read these as a one-day move (`desk-notes.json`). The desk counts them under `parser` by
+  tenant, so they appear in both rows, and the parser fix may not close them.
 
 ## How the counts are made
 
 - Reports are counted by id. The ticket export overlaps, so some reports appear twice.
-- A report's problem comes from its tenant's locale and booking form, plus the desk's notes on the
-  body. Intake's tag is a guess from the reporter's browser. It misfiles reports both ways, so
+- Counts are the desk's own view, as exported: a report's cause comes from its tenant's locale
+  and booking form. The `shift` row comes from the desk's notes on the body and overlaps the row
+  its reports are filed in. Intake's tag is a guess from the reporter's browser. It misfiles reports both ways, so
   nothing here counts by it.
 - Nothing is typed in. The table is rebuilt from the export on every build, so new reports land in
   the right row. A report no rule places shows up as `unplaced` with no ticket.

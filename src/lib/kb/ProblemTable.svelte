@@ -13,8 +13,8 @@
 
 <p class="sum">
   <strong>{split.merged}</strong> reports merged into #{ticket} ·
-  <strong>{split.rows.length}</strong>
-  {split.rows.length === 1 ? 'problem' : 'problems'}
+  <strong>{new Set(split.rows.map((r) => r.problem)).size}</strong>
+  {new Set(split.rows.map((r) => r.problem)).size === 1 ? 'problem' : 'problems'}
 </p>
 
 <table>
@@ -22,11 +22,11 @@
     <tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr>
   </thead>
   <tbody>
-    {#each split.rows as row (row.problem)}
+    {#each split.rows as row (row.problem + (row.filedUnder ?? ''))}
       {@const t = row.problem === 'unplaced' ? null : PROBLEM_TICKETS[row.problem]}
       <tr class:open={!t}>
         <td><code>{row.problem}</code>{#if t}<br /><span class="what">{t.what}</span>{/if}</td>
-        <td>{row.reports.length}</td>
+        <td>{row.reports.length}{#if row.filedUnder}<br /><span class="what">within {row.filedUnder}</span>{/if}</td>
         <td>{row.tenants}</td>
         <td>{row.firstSeen} → {row.lastSeen}</td>
         <td>{#if t}<a href={t.issue}>#{issueNo(t.issue)}</a>{:else}no ticket yet: read these{/if}</td>
@@ -34,6 +34,10 @@
     {/each}
   </tbody>
 </table>
+
+{#each split.rows.filter((r) => r.filedUnder) as row (row.filedUnder)}
+  <p class="what">The {row.reports.length} <code>{row.problem}</code> reports are filed under <code>{row.filedUnder}</code> by tenant, as the desk counts them, so they are part of that row too.</p>
+{/each}
 
 <style>
   .sum { font-size: 1.1rem; }
