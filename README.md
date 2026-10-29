@@ -41,5 +41,5 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
 - Page: `src/routes/kb/incidents/4471-split/+page.svx`, with its logic in `src/lib/kb/problems.ts` and `src/lib/kb/ProblemTable.svelte`.
 - The page as the desk sees it: `rendered/4471-split.html` (prerendered, self-contained) and `rendered/4471-split.png`.
-- Tickets: [#1 parser](../../issues/1) · [#2 booking-v3 hint](../../issues/2) · [#3 one-day shift](../../issues/3).
+- Tickets: [#4 parser](../../issues/4) (replaces #1) · [#2 booking-v3 hint](../../issues/2) · [#3 one-day shift](../../issues/3).
 - Build it yourself: `npm install && npm run build`, then open `build/kb/incidents/4471-split/index.html` through `npm run preview`.

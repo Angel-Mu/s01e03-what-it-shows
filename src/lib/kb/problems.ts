@@ -7,7 +7,7 @@ export type Problem = 'parser' | 'hint' | 'shift' | 'unplaced';
 
 export const PROBLEM_TICKETS: Record<Exclude<Problem, 'unplaced'>, { issue: string; what: string }> = {
   parser: {
-    issue: 'https://github.com/Angel-Mu/s01e03-what-it-shows/issues/1',
+    issue: 'https://github.com/Angel-Mu/s01e03-what-it-shows/issues/4',
     what: 'shared parser reads month first; day-first tenants get day and month swapped',
   },
   hint: {
