@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 split · three problems, three tickets'
 owner: Angel-Mu
-status: living
+status: closed
 reviewed: 2026-10-28
 signature: Angel-Mu
 ---
@@ -21,6 +21,8 @@ first one.
 <Callout kind="warn">
 Not one issue. Three problems, each with its own ticket. The queued fix does not close #2 or #3.
 </Callout>
+
+Filed and closed: the three tickets below are closed by the commit that added this page.
 
 ## What #4471 holds
 
